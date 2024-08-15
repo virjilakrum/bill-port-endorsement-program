@@ -5,7 +5,7 @@
 #include "finance/invoice.h"
 #include "utils/file_handler.h"
 
-#define MAX_INVOICES 100
+// #define MAX_INVOICES 100
 #define INVOICES_FILE "invoices.csv"
 #define COMPANY_FILE "company.csv"
 

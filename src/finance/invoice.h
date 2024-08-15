@@ -6,6 +6,7 @@
 #define MAX_CUSTOMER_NAME 100
 #define MAX_PRODUCT_NAME 100
 #define MAX_PRODUCTS 10
+#define MAX_INVOICES 100
 
 typedef struct {
     char name[MAX_PRODUCT_NAME];
