@@ -1,21 +1,34 @@
 #include <stdio.h>
-#include <string.h>
-#include "finance/revenue.h"
+   #include <string.h>
+   #include "finance/revenue.h"
 
-int main() {
-    printf("Bill-Port Muhasebe Programına Hoş Geldiniz!\n");
+   #define MAX_TRANSACTIONS 100
 
-    Company sample_company;
-    strcpy(sample_company.company_name, "Örnek Şirket");
-    sample_company.annual_revenue = 0.0;
+   int main() {
+       printf("Bill-Port Muhasebe Programına Hoş Geldiniz!\n");
 
-    double transactions[] = {1000.0, 2000.0, 3000.0, 4000.0, 5000.0};
-    int transaction_count = sizeof(transactions) / sizeof(transactions[0]);
+       Company sample_company;
+       printf("Şirket adını girin: ");
+       fgets(sample_company.company_name, sizeof(sample_company.company_name), stdin);
+       sample_company.company_name[strcspn(sample_company.company_name, "\n")] = 0;
+       sample_company.annual_revenue = 0.0;
 
-    double total_revenue = calculate_revenue(&sample_company, transactions, transaction_count);
-    update_company_revenue(&sample_company, total_revenue);
+       double transactions[MAX_TRANSACTIONS];
+       int transaction_count = 0;
 
-    printf("%s şirketinin yıllık cirosu: %.2f TL\n", sample_company.company_name, sample_company.annual_revenue);
+       printf("İşlemleri girin (Bitirmek için 0 veya negatif bir değer girin):\n");
+       while (transaction_count < MAX_TRANSACTIONS) {
+           double transaction;
+           printf("İşlem %d: ", transaction_count + 1);
+           if (scanf("%lf", &transaction) != 1 || transaction <= 0) {
+               break;
+           }
+           transactions[transaction_count++] = transaction;
+       }
 
-    return 0;
-}
+       double total_revenue = calculate_revenue(&sample_company, transactions, transaction_count);
+
+       printf("%s şirketinin yıllık cirosu: %.2f TL\n", sample_company.company_name, sample_company.annual_revenue);
+
+       return 0;
+   }
