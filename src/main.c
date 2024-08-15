@@ -3,8 +3,11 @@
 #include <string.h>
 #include "finance/revenue.h"
 #include "finance/invoice.h"
+#include "utils/file_handler.h"
 
 #define MAX_INVOICES 100
+#define INVOICES_FILE "invoices.csv"
+#define COMPANY_FILE "company.csv"
 
 void print_menu() {
     printf("\n--- Bill-Port Muhasebe Programı ---\n");
