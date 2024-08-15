@@ -14,7 +14,8 @@ void print_menu() {
     printf("1. Yeni Fatura Oluştur\n");
     printf("2. Fatura Görüntüle\n");
     printf("3. Ciro Hesapla\n");
-    printf("4. Çıkış\n");
+    printf("4. Verileri Kaydet\n");
+    printf("5. Çıkış\n");
     printf("Seçiminiz: ");
 }
 
