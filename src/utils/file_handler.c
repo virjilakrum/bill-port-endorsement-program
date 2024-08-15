@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 #include "file_handler.h"
 
 int save_invoices_to_csv(const char* filename, Invoice* invoices, int invoice_count) {
@@ -78,4 +79,12 @@ int load_company_from_csv(const char* filename, Company* company) {
 
     fclose(file);
     return 1;
+}
+
+time_t convert_date_to_time_t(const char* date_str) {
+    struct tm tm = {0};
+    sscanf(date_str, "%d-%d-%d", &tm.tm_year, &tm.tm_mon, &tm.tm_mday);
+    tm.tm_year -= 1900;  // Yıl 1900'den itibaren
+    tm.tm_mon -= 1;      // Ay 0-11 arası
+    return mktime(&tm);
 }
