@@ -10,7 +10,7 @@
        Company sample_company;
        printf("Şirket adını girin: ");
        fgets(sample_company.company_name, sizeof(sample_company.company_name), stdin);
-       sample_company.company_name[strcspn(sample_company.company_name, "\n")] = 0;
+       sample_company.company_name[strcspn(sample_company.company_name, "\n")] = 0; // Yeni satır karakterini kaldır
        sample_company.annual_revenue = 0.0;
 
        double transactions[MAX_TRANSACTIONS];
