@@ -26,7 +26,7 @@
            transactions[transaction_count++] = transaction;
        }
 
-       double total_revenue = calculate_revenue(&sample_company, transactions, transaction_count);
+calculate_revenue(&sample_company, transactions, transaction_count);
 
        printf("%s şirketinin yıllık cirosu: %.2f TL\n", sample_company.company_name, sample_company.annual_revenue);
 
