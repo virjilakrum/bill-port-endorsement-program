@@ -51,12 +51,13 @@ void generate_date_range_revenue_report(Invoice* invoices, int invoice_count) {
     printf("Belirtilen tarih aralığındaki toplam ciro: %.2f TL\n", total_revenue);
 }
 
-void generate_top_customers_report(Invoice* invoices, int invoice_count) {
+
+void generate_top_customers_report(Invoice* invoices __attribute__((unused)), int invoice_count __attribute__((unused))) {
     // Bu fonksiyonu daha sonra implement edeceğim @virjilakrum 🏗️
     printf("Bu özellik henüz implement edilmedi.\n");
 }
 
-void generate_product_sales_report(Invoice* invoices, int invoice_count) {
+void generate_product_sales_report(Invoice* invoices __attribute__((unused)), int invoice_count __attribute__((unused))) {
     // Bu fonksiyonu daha sonra implement edeceğim @virjilakrum 🏗️
     printf("Bu özellik henüz implement edilmedi.\n");
 }
